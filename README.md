@@ -20,11 +20,11 @@ Koblan Dub est un atelier complet de traduction et de doublage pour Windows : il
 
 Le menu **Outils** ajoute : sous-titres bilingues (fusion de 2 SRT), conversion SRT/ASS/VTT/TXT, séparation voix et musique de fond, fusion vidéo/audio/sous-titres.
 
-La voix française de base fonctionne **hors ligne**. Les autres langues utilisent une voix en ligne (connexion internet nécessaire).
+Une trentaine de langues au départ comme à l'arrivée (français, anglais, espagnol, portugais, arabe, chinois, russe, allemand, japonais, turc…). La transcription et la voix française intégrée fonctionnent **hors ligne** ; la traduction et les voix des autres langues passent par internet (gratuitement).
 
 ## Télécharger et installer
 
-Rendez-vous sur la page [Releases](https://github.com/josuekoblan03-lab/koblan-dub/releases/latest) et téléchargez **les 4 fichiers** :
+Le plus simple : le bouton **Tout télécharger** sur [koblan-dub.vercel.app](https://koblan-dub.vercel.app/#telecharger). Sinon, sur la page [Releases](https://github.com/josuekoblan03-lab/koblan-dub/releases/latest), téléchargez **les 4 fichiers** :
 
 - `KoblanDub-Setup.exe`
 - `KoblanDub-Setup-1.bin`

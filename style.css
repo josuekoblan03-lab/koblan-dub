@@ -93,6 +93,8 @@ ul, ol { padding: 0; list-style: none; }
 .bouton--trait { border: 1px solid var(--trait); color: var(--or); }
 .bouton--trait:hover { border-color: var(--or); }
 .bouton--grand { min-height: 3.5rem; padding: .9rem 1.6rem; font-size: 1.0625rem; }
+button.bouton { border: 0; font-family: inherit; cursor: pointer; }
+button.bouton:disabled { opacity: .6; cursor: progress; }
 
 /* ---------- en-tête : le bouton Télécharger reste toujours visible ---------- */
 .entete {
@@ -152,7 +154,7 @@ ul, ol { padding: 0; list-style: none; }
 
 /* sans JavaScript : la phrase s'affiche directement en français */
 html:not(.js) .voix__ligne,
-.voix__ligne .c[data-e="fr"] {
+.voix__ligne .c[data-e="cible"] {
   font-family: var(--serif);
   font-style: italic;
   font-weight: 400;
@@ -229,16 +231,22 @@ h3 { font-weight: 650; font-stretch: 90%; font-size: 1.375rem; line-height: 1.2;
   transform-origin: 50% 0;
   background: var(--voile);
 }
-.soustitre {
-  display: grid; gap: .5rem;
-  max-width: 50rem; margin: 2.5rem auto 0;
-  text-align: center;
+/* ---------- langues : un nuage de noms, le français mis en voix ---------- */
+.langues__liste {
+  display: flex; flex-wrap: wrap; gap: .35em 1.1em;
+  font-weight: 650; font-stretch: 80%;
+  font-variation-settings: "opsz" 48;
+  font-size: clamp(1.6rem, 3.6vw, 3rem); line-height: 1.15; letter-spacing: -.015em;
+  color: var(--or-eteint);
 }
-.soustitre__vo { font-size: 1rem; color: var(--or-eteint); }
-.soustitre__vf {
-  font-family: var(--serif); font-style: italic;
-  font-size: clamp(1.5rem, 3vw, 2.25rem); line-height: 1.25; color: var(--or);
+.langues__liste li { transition: color .25s var(--ease); }
+.langues__liste li:hover { color: var(--or); }
+.langues__liste li.allume { color: var(--or); }
+.langues__note {
+  display: flex; gap: .75rem; align-items: flex-start;
+  margin-top: 2.5rem; max-width: 64ch; color: var(--or-eteint);
 }
+.langues__note .ico { margin-top: .15em; }
 
 /* ---------- modes : des pistes de montage ---------- */
 .modes__liste { border-top: 1px solid var(--trait); }
@@ -330,6 +338,12 @@ h3 { font-weight: 650; font-stretch: 90%; font-size: 1.375rem; line-height: 1.2;
 @media (max-width: 760px) { .etapes__liste { grid-template-columns: 1fr; } }
 
 /* ---------- télécharger ---------- */
+.tout { display: grid; justify-items: start; gap: 1rem; margin-bottom: 3rem; }
+.tout .bouton { white-space: normal; text-align: left; }
+.tout__etat { max-width: 60ch; color: var(--or); }
+.nowrap { white-space: nowrap; }
+.tout__etat:empty { display: none; }
+.fichiers__titre { margin-bottom: 1rem; color: var(--or-eteint); font-size: .9375rem; }
 .fichiers { display: grid; gap: .75rem; }
 .fichier {
   display: grid; grid-template-columns: 2.5rem 1fr auto 1.5rem;

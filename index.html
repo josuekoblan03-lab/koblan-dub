@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Koblan Dub — traduire et doubler vos vidéos</title>
-<meta name="description" content="Koblan Dub transcrit, traduit et double vos vidéos dans votre langue, sur votre PC. Gratuit, pour Windows 10 et 11.">
+<meta name="description" content="Koblan Dub transcrit, traduit et double vos vidéos dans une trentaine de langues, sur votre PC. Gratuit, pour Windows 10 et 11.">
 <meta name="theme-color" content="#000000">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Koblan Dub — chaque leçon, dans votre langue">
-<meta property="og:description" content="Transcrire, traduire et doubler une vidéo sur votre PC. Gratuit, pour Windows.">
+<meta property="og:description" content="Transcrire, traduire et doubler une vidéo dans une trentaine de langues, sur votre PC. Gratuit, pour Windows.">
 <meta property="og:image" content="https://koblan-dub.vercel.app/assets/img/partage.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
@@ -44,20 +44,20 @@
   <section class="accueil" id="haut" aria-labelledby="titre-accueil">
     <div class="accueil__scene">
       <h1 class="voix" id="titre-accueil" aria-label="Chaque leçon, dans votre langue.">
-        <span class="voix__ligne" data-en="Every lesson," data-fr="Chaque leçon,">Chaque leçon,</span>
-        <span class="voix__ligne" data-en="in your language." data-fr="dans votre langue.">dans votre langue.</span>
+        <span class="voix__ligne" data-l="Every lesson,|Cada lección,|Jede Lektion,|Cada lição,|Chaque leçon,">Chaque leçon,</span>
+        <span class="voix__ligne" data-l="in your language.|en tu idioma.|in deiner Sprache.|no seu idioma.|dans votre langue.">dans votre langue.</span>
       </h1>
 
       <div class="piste" aria-hidden="true">
         <span class="piste__rec"></span>
         <span class="piste__tc">00:00:01,200 --&gt; 00:00:03,800</span>
-        <span class="piste__langue">Voix doublée, français</span>
+        <span class="piste__langue">Doublée en français</span>
       </div>
 
       <canvas class="onde" aria-hidden="true"></canvas>
 
       <div class="accueil__pied">
-        <p class="accueil__texte">Koblan Dub transcrit, traduit et double vos vidéos, directement sur votre PC. Gratuit, pour Windows.</p>
+        <p class="accueil__texte">Koblan Dub transcrit, traduit et double vos vidéos dans une trentaine de langues, directement sur votre PC. Gratuit, pour Windows.</p>
         <div class="accueil__actions">
           <a class="bouton bouton--rouge bouton--grand aimant" href="#telecharger">
             <svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-download-simple"/></svg>
@@ -73,15 +73,30 @@
   <section class="bloc atelier" id="atelier" aria-labelledby="titre-atelier">
     <div class="bloc__tete">
       <h2 id="titre-atelier">Tout se règle sur un seul écran.</h2>
-      <p>Choisissez la vidéo, cliquez sur Démarrer. Le reste est déjà réglé : anglais vers français, voix française, sous-titres incrustés, sortie en MP4.</p>
+      <p>Choisissez la vidéo et la langue d'arrivée, cliquez sur Démarrer. Tout le reste est prêt : transcription, traduction, voix, sous-titres incrustés, sortie en MP4.</p>
     </div>
     <figure class="atelier__cadre">
       <img src="assets/img/atelier-1600.webp" srcset="assets/img/atelier-900.webp 900w, assets/img/atelier-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 1200px" width="1600" height="849" loading="lazy" decoding="async" alt="L'écran principal de Koblan Dub : choix de la vidéo, transcription locale, traduction, voix française M2 et bouton Démarrer.">
     </figure>
-    <div class="soustitre" aria-label="Exemple de sous-titre avant et après">
-      <p class="soustitre__vo" lang="en">“Welcome to the course. Today, we’ll see how networks talk to each other.”</p>
-      <p class="soustitre__vf">« Bienvenue dans la formation. Aujourd’hui, nous allons voir comment les réseaux communiquent. »</p>
+  </section>
+
+  <!-- LANGUES -->
+  <section class="bloc langues" id="langues" aria-labelledby="titre-langues">
+    <div class="bloc__tete">
+      <h2 id="titre-langues">Une trentaine de langues, au départ comme à l'arrivée.</h2>
+      <p>Une formation en espagnol vers le français, un cours français vers l'anglais, une vidéo chinoise vers l'arabe : choisissez la langue de la vidéo et celle que vous voulez entendre.</p>
     </div>
+    <ul class="langues__liste">
+      <li>Français</li><li>Anglais</li><li>Espagnol</li><li>Portugais</li><li>Allemand</li><li>Italien</li>
+      <li>Néerlandais</li><li>Arabe</li><li>Chinois simplifié</li><li>Chinois traditionnel</li><li>Cantonais</li>
+      <li>Japonais</li><li>Coréen</li><li>Hindi</li><li>Bengali</li><li>Ourdou</li><li>Persan</li><li>Turc</li>
+      <li>Russe</li><li>Ukrainien</li><li>Polonais</li><li>Tchèque</li><li>Hongrois</li><li>Grec</li><li>Suédois</li>
+      <li>Hébreu</li><li>Thaï</li><li>Vietnamien</li><li>Indonésien</li><li>Malais</li><li>Filipino</li><li>Kazakh</li>
+    </ul>
+    <p class="langues__note">
+      <svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-wifi-slash"/></svg>
+      <span>La transcription et la voix française intégrée fonctionnent sans connexion. La traduction (Google) et les voix des autres langues (Edge-TTS) sont gratuites et passent par internet.</span>
+    </p>
   </section>
 
   <!-- MODES -->
@@ -96,7 +111,7 @@
         <svg class="ico ico--mode" aria-hidden="true"><use href="assets/icones.svg#i-film-strip"/></svg>
         <div class="mode__texte">
           <h3>Traduire une vidéo</h3>
-          <p>Donnez une vidéo en anglais, récupérez-la doublée en français avec ses sous-titres. Transcription, traduction, voix et montage s'enchaînent seuls.</p>
+          <p>Donnez une vidéo dans une langue, récupérez-la doublée et sous-titrée dans une autre. Transcription, traduction, voix et montage s'enchaînent seuls.</p>
         </div>
         <div class="clip"><span class="clip__remplissage"></span><span class="clip__sortie">Vidéo MP4 doublée</span></div>
       </li>
@@ -171,7 +186,7 @@
       <li>
         <svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-chalkboard-teacher"/></svg>
         <h3>Celles et ceux qui se forment</h3>
-        <p>Ce cours en ligne acheté en anglais, suivez-le enfin dans votre langue.</p>
+        <p>Ce cours en ligne acheté dans une langue étrangère, suivez-le enfin dans la vôtre.</p>
       </li>
       <li>
         <svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-video-camera"/></svg>
@@ -204,8 +219,8 @@
     <ol class="etapes__liste">
       <li>
         <span class="etapes__num" aria-hidden="true">1</span>
-        <h3>Choisissez la vidéo</h3>
-        <p>Une seule, ou tout un dossier d'un coup.</p>
+        <h3>Choisissez la vidéo et la langue</h3>
+        <p>Une seule vidéo ou tout un dossier d'un coup, puis la langue que vous voulez entendre.</p>
       </li>
       <li>
         <span class="etapes__num" aria-hidden="true">2</span>
@@ -215,7 +230,7 @@
       <li>
         <span class="etapes__num" aria-hidden="true">3</span>
         <h3>Ouvrez le résultat</h3>
-        <p>Votre vidéo en MP4, avec la voix et les sous-titres en français.</p>
+        <p>Votre vidéo en MP4, avec la voix et les sous-titres dans la langue choisie.</p>
       </li>
     </ol>
     <p class="etapes__note">
@@ -228,9 +243,18 @@
   <section class="bloc telecharger" id="telecharger" aria-labelledby="titre-telecharger">
     <div class="bloc__tete">
       <h2 id="titre-telecharger">Télécharger Koblan Dub</h2>
-      <p>Gratuit, pour Windows 10 et 11 (64 bits). Le logiciel est livré en 4 fichiers, 4,1 Go au total : téléchargez-les tous.</p>
+      <p>Gratuit, pour Windows 10 et 11 (64 bits). Le logiciel pèse 4,1 Go : il est livré en 4 fichiers, que ce bouton télécharge d'un seul clic.</p>
     </div>
 
+    <div class="tout">
+      <button type="button" class="bouton bouton--rouge bouton--grand aimant" id="tout-telecharger">
+        <svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-download-simple"/></svg>
+        <span>Tout télécharger <span class="nowrap">(4 fichiers, 4,1&nbsp;Go)</span></span>
+      </button>
+      <p class="tout__etat" id="tout-etat" role="status" aria-live="polite"></p>
+    </div>
+
+    <p class="fichiers__titre">Ou fichier par fichier, si un téléchargement a échoué :</p>
     <ol class="fichiers">
       <li><a class="fichier" href="https://github.com/josuekoblan03-lab/koblan-dub/releases/download/v1.0/KoblanDub-Setup.exe">
         <span class="fichier__num" aria-hidden="true">1</span>
@@ -263,11 +287,11 @@
       <ol class="installer__etapes">
         <li>
           <svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-folder-simple"/></svg>
-          <p>Mettez les 4 fichiers <strong>dans le même dossier</strong>, sans les renommer.</p>
+          <p>Attendez la fin des 4 téléchargements : ils arrivent ensemble dans votre dossier <strong>Téléchargements</strong>. Laissez-les dans ce même dossier.</p>
         </li>
         <li>
           <svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-play"/></svg>
-          <p>Double-cliquez sur <strong>KoblanDub-Setup.exe</strong> et suivez les étapes.</p>
+          <p>Ouvrez <strong>KoblanDub-Setup.exe</strong> et suivez les étapes. Les 3 autres fichiers sont lus automatiquement.</p>
         </li>
         <li>
           <svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-shield-check"/></svg>
@@ -308,7 +332,7 @@ bbec8f13c3aee3efc68214296c04398cc3462800a4f33eee36a978a703a0b784  KoblanDub-Setu
       </details>
       <details>
         <summary>Quelles langues ?<svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-caret-down"/></svg></summary>
-        <p>Une trentaine, au départ comme à l'arrivée : anglais, français, espagnol, portugais, arabe, chinois, russe, allemand, japonais, turc et bien d'autres. Le logiciel est réglé par défaut de l'anglais vers le français. La voix intégrée est française ; pour doubler dans une autre langue, choisissez une voix Edge-TTS (en ligne).</p>
+        <p>Une trentaine, au départ comme à l'arrivée : français, anglais, espagnol, portugais, arabe, chinois, russe, allemand, japonais, turc et bien d'autres (la liste complète est plus haut). À l'installation, le logiciel est réglé de l'anglais vers le français : changez simplement la langue source et la langue cible. Pour doubler dans une autre langue que le français, choisissez une voix Edge-TTS (gratuite, en ligne).</p>
       </details>
       <details>
         <summary>Combien de temps prend une vidéo ?<svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-caret-down"/></svg></summary>
@@ -317,6 +341,10 @@ bbec8f13c3aee3efc68214296c04398cc3462800a4f33eee36a978a703a0b784  KoblanDub-Setu
       <details>
         <summary>Ma vidéo est sortie sans voix française.<svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-caret-down"/></svg></summary>
         <p>Vérifiez que la case « Voix » n'est pas réglée sur « No », puis relancez.</p>
+      </details>
+      <details>
+        <summary>L'installation réclame un fichier manquant.<svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-caret-down"/></svg></summary>
+        <p>Vérifiez que les 4 fichiers sont bien arrivés en entier dans le même dossier, et qu'ils portent exactement les noms ci-dessus. Si vous avez téléchargé un fichier deux fois, le navigateur a pu nommer la copie « KoblanDub-Setup-1 (1).bin » : gardez l'original et supprimez les copies. Un fichier interrompu se retélécharge avec la liste « fichier par fichier ».</p>
       </details>
       <details>
         <summary>Et sur Mac ou Linux ?<svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-caret-down"/></svg></summary>

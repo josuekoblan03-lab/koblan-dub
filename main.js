@@ -35,9 +35,12 @@
   });
 
   /* ---------- la phrase qui change de langue ---------- */
+  // anglais → espagnol → allemand → portugais → français : la voix change de langue à chaque étape
+  var LANGUES = ["Voix originale, anglais", "Doublée en espagnol", "Doublée en allemand", "Doublée en portugais", "Doublée en français"];
+  var ETAPES = LANGUES.length - 1;
   var lignes = Array.prototype.map.call(document.querySelectorAll(".voix__ligne"), function (el, li) {
-    var en = el.dataset.en, fr = el.dataset.fr;
-    var n = Math.max(en.length, fr.length);
+    var textes = el.dataset.l.split("|");
+    var n = Math.max.apply(null, textes.map(function (t) { return t.length; }));
     el.textContent = "";
     el.setAttribute("aria-hidden", "true");
     var cases = [];
@@ -47,27 +50,36 @@
       el.appendChild(s);
       cases.push(s);
     }
-    return { en: en, fr: fr, n: n, cases: cases, li: li };
+    return { textes: textes, n: n, cases: cases, li: li };
   });
 
   function lettre(c) { return (c === undefined || c === " ") ? ESPACE : c; }
 
-  // fenêtre de balayage : la tête de lecture traverse la phrase entre DEBUT et DEBUT + COURSE
-  var DEBUT = 0.06, COURSE = 0.7, FONDU = 0.12;
+  // p global (0..1) → étape k (passage de la langue k à k+1) et avancement local q (0..1)
+  function decouper(p) {
+    var x = Math.min(p, 0.99999) * ETAPES;
+    var k = Math.floor(x);
+    return { k: k, q: p >= 1 ? 1 : x - k };
+  }
+  // dans une étape, la tête de lecture traverse la phrase entre DEBUT et DEBUT + COURSE
+  var DEBUT = 0.05, COURSE = 0.62, FONDU = 0.2;
   function seuil(L, i) { return DEBUT + ((i + L.li * 1.5) / (L.n + 3)) * COURSE; }
+  function etatDe(index) { return index === 0 ? "src" : "cible"; }
 
   var dernier = -1;
   function rendre(p) {
     if (Math.abs(p - dernier) < 0.0015) return;
     dernier = p;
+    var d = decouper(p);
     lignes.forEach(function (L) {
+      var avant = L.textes[d.k], apres = L.textes[d.k + 1];
       for (var i = 0; i < L.n; i++) {
-        var q = (p - seuil(L, i)) / FONDU, etat, c;
-        if (q <= 0) { etat = "en"; c = L.en[i]; }
-        else if (q >= 1) { etat = "fr"; c = L.fr[i]; }
+        var q = (d.q - seuil(L, i)) / FONDU, etat, c;
+        if (q <= 0) { etat = etatDe(d.k); c = avant[i]; }
+        else if (q >= 1) { etat = etatDe(d.k + 1); c = apres[i]; }
         else {
           etat = "bruit";
-          var cible = L.fr[i];
+          var cible = apres[i];
           c = (cible === undefined || cible === " ") ? " " : GLYPHES.charAt((Math.random() * GLYPHES.length) | 0);
         }
         var s = L.cases[i], ch = lettre(c);
@@ -88,7 +100,9 @@
   function majPiste(p) {
     var debut = 1200 + Math.round(p * 5400);
     tc.textContent = horodatage(debut) + " --> " + horodatage(debut + 2600);
-    langue.textContent = p < 0.45 ? "Voix originale, anglais" : "Voix doublée, français";
+    var d = decouper(p);
+    var texte = LANGUES[d.q > DEBUT + COURSE / 2 ? d.k + 1 : d.k];
+    if (langue.textContent !== texte) langue.textContent = texte;
   }
 
   /* ---------- l'onde : barres arrondies comme le logo, la barre rouge balaie ---------- */
@@ -116,7 +130,7 @@
     ctx.clearRect(0, 0, W, H);
     var pas = W < 640 ? 7 : 9, l = Math.max(3, Math.round(pas * 0.5));
     var n = Math.floor(W / pas);
-    var balayage = Math.min(1, Math.max(0, (etat.p - DEBUT) / COURSE));
+    var balayage = Math.min(1, Math.max(0, (decouper(etat.p).q - DEBUT) / (COURSE + FONDU / 2)));
     var xRouge = balayage * (W - l);
     for (var i = 0; i < n; i++) {
       var x = i * pas;
@@ -155,7 +169,7 @@
     ScrollTrigger.create({
       trigger: ".accueil",
       start: "top top",
-      end: "+=120%",
+      end: "+=260%",
       pin: ".accueil__scene",
       scrub: true,
       onUpdate: function (self) {
@@ -177,6 +191,40 @@
         scaleX: 1, ease: "none",
         scrollTrigger: { trigger: m, start: "top 88%", end: "top 40%", scrub: true }
       });
+    });
+  }
+
+  /* ---------- « Tout télécharger » : les 4 fichiers, l'un après l'autre ---------- */
+  var boutonTout = document.getElementById("tout-telecharger");
+  var etatTout = document.getElementById("tout-etat");
+  if (boutonTout) {
+    boutonTout.addEventListener("click", function () {
+      var liens = Array.prototype.map.call(document.querySelectorAll(".fichier"), function (a) { return a.href; });
+      boutonTout.disabled = true;
+      etatTout.textContent = "Lancement des 4 téléchargements… Si votre navigateur demande d'autoriser plusieurs téléchargements, cliquez sur Autoriser.";
+      liens.forEach(function (url, i) {
+        setTimeout(function () {
+          var a = document.createElement("a");
+          a.href = url; a.rel = "noopener"; a.style.display = "none";
+          document.body.appendChild(a); a.click(); a.remove();
+          if (i === liens.length - 1) {
+            etatTout.textContent = "Les 4 téléchargements sont lancés. Quand ils sont tous terminés, ouvrez KoblanDub-Setup.exe depuis votre dossier Téléchargements.";
+            boutonTout.disabled = false;
+          }
+        }, i * 1500);
+      });
+    });
+  }
+
+  /* ---------- les langues s'allument une à une au défilement ---------- */
+  if (!reduit) {
+    var noms = document.querySelectorAll(".langues__liste li");
+    ScrollTrigger.create({
+      trigger: ".langues__liste", start: "top 80%", end: "bottom 45%", scrub: true,
+      onUpdate: function (self) {
+        var allumes = Math.round(self.progress * noms.length);
+        noms.forEach(function (li, i) { li.classList.toggle("allume", i < allumes); });
+      }
     });
   }
 
