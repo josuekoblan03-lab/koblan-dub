@@ -194,6 +194,19 @@
     });
   }
 
+  /* ---------- démo : notre bouton lance la vidéo, puis les contrôles du lecteur prennent le relais ---------- */
+  var cadreDemo = document.querySelector(".demo__cadre");
+  if (cadreDemo) {
+    var video = cadreDemo.querySelector("video");
+    video.controls = false; // sans JavaScript, le lecteur garde ses contrôles
+    cadreDemo.querySelector(".demo__lecture").addEventListener("click", function () {
+      cadreDemo.classList.add("lancee");
+      video.controls = true;
+      video.play();
+      video.focus();
+    });
+  }
+
   /* ---------- « Tout télécharger » : les 4 fichiers, l'un après l'autre ---------- */
   var boutonTout = document.getElementById("tout-telecharger");
   var etatTout = document.getElementById("tout-etat");

@@ -27,7 +27,7 @@
     <span>Koblan Dub</span>
   </a>
   <nav class="menu" aria-label="Sections">
-    <a href="#atelier">L'atelier</a>
+    <a href="#demo">Démo</a>
     <a href="#modes">Fonctions</a>
     <a href="#telecharger">Installer</a>
     <a href="#questions">Questions</a>
@@ -63,10 +63,29 @@
             <svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-download-simple"/></svg>
             <span>Télécharger pour Windows</span>
           </a>
-          <a class="bouton bouton--trait" href="#modes">Voir ce qu'il sait faire</a>
+          <a class="bouton bouton--trait" href="#demo">Voir la démo</a>
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- DÉMO -->
+  <section class="bloc demo" id="demo" aria-labelledby="titre-demo">
+    <div class="bloc__tete">
+      <h2 id="titre-demo">Écoutez la différence.</h2>
+      <p>Un astronaute répond en anglais depuis la Station spatiale internationale. Le même passage, doublé et sous-titré en français par Koblan Dub, sans rien régler.</p>
+    </div>
+    <figure class="demo__cadre">
+      <video class="demo__video" controls preload="none" playsinline width="1280" height="720" poster="assets/video/demo-affiche.jpg" aria-label="Démo : un passage en anglais, puis le même passage doublé en français par Koblan Dub">
+        <source src="assets/video/demo.mp4" type="video/mp4">
+      </video>
+      <button type="button" class="demo__lecture" aria-label="Lire la démo (39 secondes, avec le son)">
+        <svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-play"/></svg>
+        <span>Lire la démo</span>
+        <span class="demo__duree">0:39</span>
+      </button>
+      <figcaption class="demo__credit">Extrait : NASA (domaine public), l'astronaute Frank Rubio à bord de la Station spatiale internationale. Doublé automatiquement par Koblan Dub avec une voix de synthèse. Koblan Dub n'est pas affilié à la NASA.</figcaption>
+    </figure>
   </section>
 
   <!-- ATELIER -->
