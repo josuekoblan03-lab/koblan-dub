@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Image de partage</title>
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<style>
+  html, body { margin: 0; background: #000; }
+  .carte {
+    width: 1200px; height: 630px; box-sizing: border-box;
+    padding: 64px 72px; background: #000; color: #EBD698;
+    display: grid; grid-template-rows: auto 1fr auto; position: relative; overflow: hidden;
+  }
+  .marque { display: flex; align-items: center; gap: 18px; font: 700 34px/1 "Bricolage Grotesque"; font-stretch: 85%; }
+  .marque img { width: 72px; height: 72px; }
+  h1 { align-self: center; margin: 0; }
+  .en { display: block; font: 800 64px/1 "Bricolage Grotesque"; font-stretch: 75%; color: #9C8A55; letter-spacing: -.02em; }
+  .fr { display: block; margin-top: 14px; font: italic 400 100px/.95 "Instrument Serif"; letter-spacing: -.01em; }
+  .bas { display: flex; justify-content: space-between; align-items: center; font: 500 24px/1.3 "Bricolage Grotesque"; color: #F2EBD3; }
+  .bas b { background: #B12B28; color: #F2EBD3; padding: 12px 22px; border-radius: 999px; font-weight: 600; }
+  canvas { position: absolute; left: 0; right: 0; bottom: 120px; width: 100%; height: 0; }
+</style>
+</head>
+<body>
+<div class="carte">
+  <div class="marque"><img src="../assets/img/logo-192.png" alt="">Koblan Dub</div>
+  <h1><span class="en">Every lesson, in your language.</span><span class="fr">Chaque leçon,<br>dans votre langue.</span></h1>
+  <div class="bas"><span>Transcrire, traduire et doubler vos vidéos sur votre PC.</span><b>Gratuit, pour Windows</b></div>
+</div>
+</body>
+</html>

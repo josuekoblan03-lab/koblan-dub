@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Koblan Dub — traduire et doubler vos vidéos</title>
+<meta name="description" content="Koblan Dub transcrit, traduit et double vos vidéos dans votre langue, sur votre PC. Gratuit, pour Windows 10 et 11.">
+<meta name="theme-color" content="#000000">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Koblan Dub — chaque leçon, dans votre langue">
+<meta property="og:description" content="Transcrire, traduire et doubler une vidéo sur votre PC. Gratuit, pour Windows.">
+<meta property="og:image" content="https://koblan-dub.vercel.app/assets/img/partage.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/BricolageGrotesque-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/InstrumentSerif-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+
+<header class="entete">
+  <a class="marque" href="#haut" aria-label="Koblan Dub, retour en haut">
+    <img src="assets/img/logo-192.webp" width="40" height="40" alt="">
+    <span>Koblan Dub</span>
+  </a>
+  <nav class="menu" aria-label="Sections">
+    <a href="#atelier">L'atelier</a>
+    <a href="#modes">Fonctions</a>
+    <a href="#telecharger">Installer</a>
+    <a href="#questions">Questions</a>
+  </nav>
+  <a class="bouton bouton--rouge aimant" href="#telecharger">
+    <svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-windows-logo"/></svg>
+    <span>Télécharger</span>
+  </a>
+</header>
+
+<main id="contenu">
+
+  <!-- ACCUEIL : la phrase change de langue au défilement -->
+  <section class="accueil" id="haut" aria-labelledby="titre-accueil">
+    <div class="accueil__scene">
+      <h1 class="voix" id="titre-accueil" aria-label="Chaque leçon, dans votre langue.">
+        <span class="voix__ligne" data-en="Every lesson," data-fr="Chaque leçon,">Chaque leçon,</span>
+        <span class="voix__ligne" data-en="in your language." data-fr="dans votre langue.">dans votre langue.</span>
+      </h1>
+
+      <div class="piste" aria-hidden="true">
+        <span class="piste__rec"></span>
+        <span class="piste__tc">00:00:01,200 --&gt; 00:00:03,800</span>
+        <span class="piste__langue">Voix doublée, français</span>
+      </div>
+
+      <canvas class="onde" aria-hidden="true"></canvas>
+
+      <div class="accueil__pied">
+        <p class="accueil__texte">Koblan Dub transcrit, traduit et double vos vidéos, directement sur votre PC. Gratuit, pour Windows.</p>
+        <div class="accueil__actions">
+          <a class="bouton bouton--rouge bouton--grand aimant" href="#telecharger">
+            <svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-download-simple"/></svg>
+            <span>Télécharger pour Windows</span>
+          </a>
+          <a class="bouton bouton--trait" href="#modes">Voir ce qu'il sait faire</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATELIER -->
+  <section class="bloc atelier" id="atelier" aria-labelledby="titre-atelier">
+    <div class="bloc__tete">
+      <h2 id="titre-atelier">Tout se règle sur un seul écran.</h2>
+      <p>Choisissez la vidéo, cliquez sur Démarrer. Le reste est déjà réglé : anglais vers français, voix française, sous-titres incrustés, sortie en MP4.</p>
+    </div>
+    <figure class="atelier__cadre">
+      <img src="assets/img/atelier-1600.webp" srcset="assets/img/atelier-900.webp 900w, assets/img/atelier-1600.webp 1600w" sizes="(max-width: 900px) 100vw, 1200px" width="1600" height="849" loading="lazy" decoding="async" alt="L'écran principal de Koblan Dub : choix de la vidéo, transcription locale, traduction, voix française M2 et bouton Démarrer.">
+    </figure>
+    <div class="soustitre" aria-label="Exemple de sous-titre avant et après">
+      <p class="soustitre__vo" lang="en">“Welcome to the course. Today, we’ll see how networks talk to each other.”</p>
+      <p class="soustitre__vf">« Bienvenue dans la formation. Aujourd’hui, nous allons voir comment les réseaux communiquent. »</p>
+    </div>
+  </section>
+
+  <!-- MODES -->
+  <section class="bloc modes" id="modes" aria-labelledby="titre-modes">
+    <div class="bloc__tete">
+      <h2 id="titre-modes">Bien plus qu'un traducteur de vidéo.</h2>
+      <p>Sept modes, un par besoin. Chacun se trouve dans la colonne de gauche de l'application.</p>
+    </div>
+
+    <ul class="modes__liste">
+      <li class="mode">
+        <svg class="ico ico--mode" aria-hidden="true"><use href="assets/icones.svg#i-film-strip"/></svg>
+        <div class="mode__texte">
+          <h3>Traduire une vidéo</h3>
+          <p>Donnez une vidéo en anglais, récupérez-la doublée en français avec ses sous-titres. Transcription, traduction, voix et montage s'enchaînent seuls.</p>
+        </div>
+        <div class="clip"><span class="clip__remplissage"></span><span class="clip__sortie">Vidéo MP4 doublée</span></div>
+      </li>
+      <li class="mode">
+        <svg class="ico ico--mode" aria-hidden="true"><use href="assets/icones.svg#i-subtitles"/></svg>
+        <div class="mode__texte">
+          <h3>Transcrire et traduire</h3>
+          <p>Obtenez les sous-titres d'une vidéo, dans sa langue ou traduits, sans toucher à l'image.</p>
+        </div>
+        <div class="clip"><span class="clip__remplissage"></span><span class="clip__sortie">Sous-titres SRT</span></div>
+      </li>
+      <li class="mode">
+        <svg class="ico ico--mode" aria-hidden="true"><use href="assets/icones.svg#i-waveform"/></svg>
+        <div class="mode__texte">
+          <h3>Parole vers texte</h3>
+          <p>Un cours audio, une réunion, un podcast : la parole devient un texte horodaté.</p>
+        </div>
+        <div class="clip"><span class="clip__remplissage"></span><span class="clip__sortie">Texte horodaté</span></div>
+      </li>
+      <li class="mode">
+        <svg class="ico ico--mode" aria-hidden="true"><use href="assets/icones.svg#i-translate"/></svg>
+        <div class="mode__texte">
+          <h3>Traduire des SRT en lot</h3>
+          <p>Déposez plusieurs fichiers de sous-titres : ils ressortent tous dans la langue choisie.</p>
+        </div>
+        <div class="clip"><span class="clip__remplissage"></span><span class="clip__sortie">SRT traduits</span></div>
+      </li>
+      <li class="mode">
+        <svg class="ico ico--mode" aria-hidden="true"><use href="assets/icones.svg#i-speaker-high"/></svg>
+        <div class="mode__texte">
+          <h3>Doublage en lot</h3>
+          <p>Transformez des fichiers de sous-titres en voix off, plusieurs à la fois.</p>
+        </div>
+        <div class="clip"><span class="clip__remplissage"></span><span class="clip__sortie">Fichiers audio</span></div>
+      </li>
+      <li class="mode">
+        <svg class="ico ico--mode" aria-hidden="true"><use href="assets/icones.svg#i-users-three"/></svg>
+        <div class="mode__texte">
+          <h3>Doublage multi-voix</h3>
+          <p>Une voix différente pour chaque réplique : pratique pour un dialogue ou une interview.</p>
+        </div>
+        <div class="clip"><span class="clip__remplissage"></span><span class="clip__sortie">Audio à plusieurs voix</span></div>
+      </li>
+      <li class="mode">
+        <svg class="ico ico--mode" aria-hidden="true"><use href="assets/icones.svg#i-stack"/></svg>
+        <div class="mode__texte">
+          <h3>Fusion vidéo + sous-titres</h3>
+          <p>Incrustez des sous-titres dans des vidéos, par lots : chaque vidéo est associée au SRT qui porte le même nom.</p>
+        </div>
+        <div class="clip"><span class="clip__remplissage"></span><span class="clip__sortie">Vidéos MP4 sous-titrées</span></div>
+      </li>
+    </ul>
+
+    <div class="outils">
+      <svg class="ico ico--outils" aria-hidden="true"><use href="assets/icones.svg#i-toolbox"/></svg>
+      <h3>Et dans le menu Outils</h3>
+      <ul>
+        <li>Sous-titres bilingues, en fusionnant deux fichiers SRT</li>
+        <li>Conversion entre SRT, ASS, VTT et TXT</li>
+        <li>Séparation de la voix et de la musique de fond</li>
+        <li>Fusion d'une vidéo, d'un audio et de sous-titres</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- POUR QUI -->
+  <section class="bloc pourqui" aria-labelledby="titre-pourqui">
+    <div class="bloc__tete">
+      <h2 id="titre-pourqui">Pour qui ?</h2>
+    </div>
+    <ul class="pourqui__liste">
+      <li>
+        <svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-chalkboard-teacher"/></svg>
+        <h3>Celles et ceux qui se forment</h3>
+        <p>Ce cours en ligne acheté en anglais, suivez-le enfin dans votre langue.</p>
+      </li>
+      <li>
+        <svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-video-camera"/></svg>
+        <h3>Les créateurs de vidéos</h3>
+        <p>Publiez vos vidéos dans une autre langue sans tout réenregistrer.</p>
+      </li>
+      <li>
+        <svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-graduation-cap"/></svg>
+        <h3>Étudiants et enseignants</h3>
+        <p>Sous-titrez un cours, traduisez une conférence, gardez le texte.</p>
+      </li>
+      <li>
+        <svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-globe-hemisphere-west"/></svg>
+        <h3>Qui apprend une langue</h3>
+        <p>Des sous-titres bilingues pour comprendre et apprendre en même temps.</p>
+      </li>
+      <li>
+        <svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-chat-circle-text"/></svg>
+        <h3>Réunions et podcasts</h3>
+        <p>Une trace écrite de tout ce qui s'est dit, sans prendre de notes.</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ÉTAPES -->
+  <section class="bloc etapes" aria-labelledby="titre-etapes">
+    <div class="bloc__tete">
+      <h2 id="titre-etapes">Trois gestes, une vidéo dans votre langue.</h2>
+    </div>
+    <ol class="etapes__liste">
+      <li>
+        <span class="etapes__num" aria-hidden="true">1</span>
+        <h3>Choisissez la vidéo</h3>
+        <p>Une seule, ou tout un dossier d'un coup.</p>
+      </li>
+      <li>
+        <span class="etapes__num" aria-hidden="true">2</span>
+        <h3>Cliquez sur Démarrer</h3>
+        <p>Laissez le PC travailler. L'option « Éteindre à la fin » l'éteint une fois tout terminé.</p>
+      </li>
+      <li>
+        <span class="etapes__num" aria-hidden="true">3</span>
+        <h3>Ouvrez le résultat</h3>
+        <p>Votre vidéo en MP4, avec la voix et les sous-titres en français.</p>
+      </li>
+    </ol>
+    <p class="etapes__note">
+      <svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-cpu"/></svg>
+      <span>Tout tourne sur le processeur : sur un PC sans carte graphique, comptez 30 à 40 minutes pour une vidéo de 8 minutes.</span>
+    </p>
+  </section>
+
+  <!-- TÉLÉCHARGER -->
+  <section class="bloc telecharger" id="telecharger" aria-labelledby="titre-telecharger">
+    <div class="bloc__tete">
+      <h2 id="titre-telecharger">Télécharger Koblan Dub</h2>
+      <p>Gratuit, pour Windows 10 et 11 (64 bits). Le logiciel est livré en 4 fichiers, 4,1 Go au total : téléchargez-les tous.</p>
+    </div>
+
+    <ol class="fichiers">
+      <li><a class="fichier" href="https://github.com/josuekoblan03-lab/koblan-dub/releases/download/v1.0/KoblanDub-Setup.exe">
+        <span class="fichier__num" aria-hidden="true">1</span>
+        <span class="fichier__nom">KoblanDub-Setup.exe</span>
+        <span class="fichier__poids">5,3 Mo</span>
+        <svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-download-simple"/></svg>
+      </a></li>
+      <li><a class="fichier" href="https://github.com/josuekoblan03-lab/koblan-dub/releases/download/v1.0/KoblanDub-Setup-1.bin">
+        <span class="fichier__num" aria-hidden="true">2</span>
+        <span class="fichier__nom">KoblanDub-Setup-1.bin</span>
+        <span class="fichier__poids">1,86 Go</span>
+        <svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-download-simple"/></svg>
+      </a></li>
+      <li><a class="fichier" href="https://github.com/josuekoblan03-lab/koblan-dub/releases/download/v1.0/KoblanDub-Setup-2.bin">
+        <span class="fichier__num" aria-hidden="true">3</span>
+        <span class="fichier__nom">KoblanDub-Setup-2.bin</span>
+        <span class="fichier__poids">1,86 Go</span>
+        <svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-download-simple"/></svg>
+      </a></li>
+      <li><a class="fichier" href="https://github.com/josuekoblan03-lab/koblan-dub/releases/download/v1.0/KoblanDub-Setup-3.bin">
+        <span class="fichier__num" aria-hidden="true">4</span>
+        <span class="fichier__nom">KoblanDub-Setup-3.bin</span>
+        <span class="fichier__poids">393 Mo</span>
+        <svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-download-simple"/></svg>
+      </a></li>
+    </ol>
+
+    <div class="installer">
+      <h3>Installer</h3>
+      <ol class="installer__etapes">
+        <li>
+          <svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-folder-simple"/></svg>
+          <p>Mettez les 4 fichiers <strong>dans le même dossier</strong>, sans les renommer.</p>
+        </li>
+        <li>
+          <svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-play"/></svg>
+          <p>Double-cliquez sur <strong>KoblanDub-Setup.exe</strong> et suivez les étapes.</p>
+        </li>
+        <li>
+          <svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-shield-check"/></svg>
+          <p>Si Windows affiche « Windows a protégé votre ordinateur », cliquez sur <strong>Informations complémentaires</strong>, puis <strong>Exécuter quand même</strong>. Ce message vient du fait que le logiciel n'est pas signé numériquement.</p>
+        </li>
+      </ol>
+
+      <dl class="requis">
+        <div><dt><svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-windows-logo"/></svg>Système</dt><dd>Windows 10 ou 11, 64 bits</dd></div>
+        <div><dt><svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-hard-drives"/></svg>Espace libre</dt><dd>environ 9 Go</dd></div>
+        <div><dt><svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-clock"/></svg>Installation</dt><dd>une dizaine de minutes, une seule fois</dd></div>
+        <div><dt><svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-check"/></svg>Droits</dt><dd>pas besoin d'être administrateur</dd></div>
+      </dl>
+
+      <details class="empreintes">
+        <summary>Vérifier les fichiers (empreintes SHA-256)</summary>
+        <pre>c29c00f7d2853009546faf26c19edf425f62f5d486e01f048f91865e8468fe9e  KoblanDub-Setup.exe
+6dc4ac3deed6e6f722ec5d117fe09faab696b09a42e8ad4567b4d63a45bfd71d  KoblanDub-Setup-1.bin
+3e110a691bba4e6cc51c0397b873eccacce2986c3c4fff2ee0f25487c5a37f51  KoblanDub-Setup-2.bin
+bbec8f13c3aee3efc68214296c04398cc3462800a4f33eee36a978a703a0b784  KoblanDub-Setup-3.bin</pre>
+      </details>
+    </div>
+  </section>
+
+  <!-- QUESTIONS -->
+  <section class="bloc questions" id="questions" aria-labelledby="titre-questions">
+    <div class="bloc__tete">
+      <h2 id="titre-questions">Questions fréquentes</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>C'est vraiment gratuit ?<svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-caret-down"/></svg></summary>
+        <p>Oui. Koblan Dub est un logiciel libre : ni abonnement, ni compte, ni publicité.</p>
+      </details>
+      <details>
+        <summary>Faut-il une connexion internet ?<svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-caret-down"/></svg></summary>
+        <p>Pour la traduction, oui : elle passe par Google, gratuitement. La transcription de la parole et la voix française intégrée fonctionnent sur votre PC, sans connexion. Les autres voix (Edge-TTS) ont besoin d'internet.</p>
+      </details>
+      <details>
+        <summary>Quelles langues ?<svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-caret-down"/></svg></summary>
+        <p>Une trentaine, au départ comme à l'arrivée : anglais, français, espagnol, portugais, arabe, chinois, russe, allemand, japonais, turc et bien d'autres. Le logiciel est réglé par défaut de l'anglais vers le français. La voix intégrée est française ; pour doubler dans une autre langue, choisissez une voix Edge-TTS (en ligne).</p>
+      </details>
+      <details>
+        <summary>Combien de temps prend une vidéo ?<svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-caret-down"/></svg></summary>
+        <p>Sur un PC sans carte graphique, comptez 30 à 40 minutes pour une vidéo de 8 minutes. Le premier lancement est un peu plus long, le temps de charger les modèles.</p>
+      </details>
+      <details>
+        <summary>Ma vidéo est sortie sans voix française.<svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-caret-down"/></svg></summary>
+        <p>Vérifiez que la case « Voix » n'est pas réglée sur « No », puis relancez.</p>
+      </details>
+      <details>
+        <summary>Et sur Mac ou Linux ?<svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-caret-down"/></svg></summary>
+        <p>Koblan Dub existe pour l'instant uniquement pour Windows 10 et 11.</p>
+      </details>
+    </div>
+  </section>
+</main>
+
+<footer class="pied">
+  <div class="pied__marque">
+    <img src="assets/img/logo-192.webp" width="56" height="56" alt="" loading="lazy">
+    <p class="pied__phrase">Chaque leçon, dans votre langue.</p>
+  </div>
+  <div class="pied__licence">
+    <p>Koblan Dub est un logiciel libre sous licence GPL-3. Le code source est disponible sur demande auprès de Koblan.</p>
+    <p>La voix française intégrée (Supertonic) est soumise à la licence OpenRAIL-M : il est interdit de l'utiliser pour se faire passer pour une personne réelle ou pour tromper.</p>
+    <p><a class="lien" href="https://github.com/josuekoblan03-lab/koblan-dub"><svg class="ico" aria-hidden="true"><use href="assets/icones.svg#i-github-logo"/></svg>Page GitHub du projet</a></p>
+  </div>
+</footer>
+
+<div class="curseur" aria-hidden="true"></div>
+
+<script src="assets/js/gsap.min.js" defer></script>
+<script src="assets/js/ScrollTrigger.min.js" defer></script>
+<script src="assets/js/lenis.min.js" defer></script>
+<script src="main.js" defer></script>
+</body>
+</html>
