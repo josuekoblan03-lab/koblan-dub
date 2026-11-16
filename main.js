@@ -213,6 +213,8 @@
   if (boutonTout) {
     boutonTout.addEventListener("click", function () {
       var liens = Array.prototype.map.call(document.querySelectorAll(".fichier"), function (a) { return a.href; });
+      // le .exe en dernier : l'avertissement « n'est pas fréquemment téléchargé » arrive après le lancement des gros fichiers
+      liens.push(liens.shift());
       boutonTout.disabled = true;
       etatTout.textContent = "Lancement des 4 téléchargements… Si votre navigateur demande d'autoriser plusieurs téléchargements, cliquez sur Autoriser.";
       liens.forEach(function (url, i) {
@@ -221,7 +223,7 @@
           a.href = url; a.rel = "noopener"; a.style.display = "none";
           document.body.appendChild(a); a.click(); a.remove();
           if (i === liens.length - 1) {
-            etatTout.textContent = "Les 4 téléchargements sont lancés. Quand ils sont tous terminés, ouvrez KoblanDub-Setup.exe depuis votre dossier Téléchargements.";
+            etatTout.textContent = "Les 4 téléchargements sont lancés. Si le navigateur dit que KoblanDub-Setup.exe « n'est pas fréquemment téléchargé », cliquez sur … puis Conserver (sur Edge : Afficher plus, puis Conserver quand même). Attendez que les 4 fichiers soient terminés, puis ouvrez KoblanDub-Setup.exe.";
             boutonTout.disabled = false;
           }
         }, i * 1500);

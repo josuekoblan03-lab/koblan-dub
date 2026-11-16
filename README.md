@@ -31,7 +31,8 @@ Le plus simple : le bouton **Tout télécharger** sur [koblan-dub.vercel.app](ht
 - `KoblanDub-Setup-2.bin`
 - `KoblanDub-Setup-3.bin`
 
-1. Mettez-les **dans le même dossier**, sans les renommer.
+1. Attendez la **fin des 4 téléchargements** et laissez-les **dans le même dossier**. Un fichier nommé « Non confirmé … .crdownload » n'est pas terminé.
+   Si le navigateur indique que `KoblanDub-Setup.exe` « n'est pas fréquemment téléchargé » : cliquez sur **…** à côté du fichier, puis **Conserver** (sur Edge : **Afficher plus**, puis **Conserver quand même**).
 2. Lancez `KoblanDub-Setup.exe`.
 3. Si Windows affiche « Windows a protégé votre ordinateur », cliquez sur **Informations complémentaires** puis **Exécuter quand même**.
 
