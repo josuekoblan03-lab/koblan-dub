@@ -233,7 +233,8 @@
   if (!reduit) {
     var noms = document.querySelectorAll(".langues__liste li");
     ScrollTrigger.create({
-      trigger: ".langues__liste", start: "top 80%", end: "bottom 45%", scrub: true,
+      // tout est allumé dès que la liste entière est à l'écran : un drapeau gris ne doit pas faire croire à une langue absente
+      trigger: ".langues__liste", start: "top 92%", end: "bottom 98%", scrub: true,
       onUpdate: function (self) {
         var allumes = Math.round(self.progress * noms.length);
         noms.forEach(function (li, i) { li.classList.toggle("allume", i < allumes); });
