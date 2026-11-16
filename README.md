@@ -2,6 +2,8 @@
 
 **Rendre une vidéo ou un audio compréhensible dans une autre langue, sur son PC, gratuitement.**
 
+**Site : [koblan-dub.vercel.app](https://koblan-dub.vercel.app)**
+
 Koblan Dub est un atelier complet de traduction et de doublage pour Windows : il transcrit la parole, traduit les sous-titres, double la vidéo avec une voix de synthèse et fusionne le tout en un MP4 prêt à regarder.
 
 ## Ce que fait Koblan Dub
