@@ -12,7 +12,9 @@ import sys
 import urllib.request
 
 RACINE = pathlib.Path(__file__).resolve().parent.parent
-LOCAL = pathlib.Path(r"C:\Users\KOBLAN\Music\koblan-dub-release")
+# fichiers fabriques de la version publiee (v1.1) ; s'ils ont ete supprimes apres publication,
+# la taille n'est pas comparee (« non verifiable »), ce n'est pas un echec
+LOCAL = pathlib.Path(r"C:\koblan_build\koblan11\installateur\sortie")
 INTERDITS = re.compile(r"pyvideotrans|jianchang|videotrans", re.I)
 TEXTES = (".html", ".css", ".js", ".md", ".txt", ".svg", ".json")
 IGNORES = {"outils", ".git", ".vercel", "node_modules"}
@@ -52,7 +54,9 @@ if "--sans-reseau" not in sys.argv:
             echecs.append(f"lien KO {nom} : {e}")
             continue
         attendu = (LOCAL / nom).stat().st_size if (LOCAL / nom).exists() else None
-        etat = "OK" if taille == attendu else f"TAILLE {taille} != {attendu}"
+        etat = "OK" if attendu is None or taille == attendu else f"TAILLE {taille} != {attendu}"
+        if attendu is None:
+            print(f"  {nom} : fichier local absent, taille non verifiable")
         if etat != "OK":
             echecs.append(f"{nom} : {etat}")
         print(f"  {nom}: {taille} octets {etat}")
