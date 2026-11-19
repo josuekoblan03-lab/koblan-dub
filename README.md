@@ -36,7 +36,7 @@ Le plus simple : le bouton **Tout télécharger** sur [koblan-dub.vercel.app](ht
 2. Lancez `KoblanDub-Setup.exe`.
 3. Si Windows affiche « Windows a protégé votre ordinateur », cliquez sur **Informations complémentaires** puis **Exécuter quand même**.
 
-Configuration requise : Windows 10 ou 11 (64 bits), environ 9 Go d'espace libre. L'installation prend une dizaine de minutes, une seule fois.
+Configuration requise : Windows 10 ou 11 (64 bits), environ 15 Go d'espace libre (9 Go pour le logiciel, au moins 5 Go pour travailler). L'installation prend une dizaine de minutes, une seule fois.
 
 Les empreintes SHA-256 des fichiers sont dans [SHA256SUMS.txt](SHA256SUMS.txt).
 
